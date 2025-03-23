@@ -1,4 +1,5 @@
 const API_URL = 'https://plivo.ainexim.com';
+// const API_URL = 'http://localhost:3200';
 
 async function fetchWithAuth(url, options = {}) {
   // Get token from localStorage
@@ -98,6 +99,10 @@ export const callAPI = {
     return await fetchWithAuth('/api/calls');
   },
 
+  getCall: async (id) => {
+    return await fetchWithAuth(`/api/calls/${id}`);
+  },
+
   getCallById: async (id) => {
     return await fetchWithAuth(`/api/calls/${id}`);
   },
@@ -124,6 +129,12 @@ export const callAPI = {
 
   initiateCall: async (id) => {
     return await fetchWithAuth(`/api/calls/${id}/initiate`, {
+      method: 'POST'
+    });
+  },
+
+  hangupCall: async (callId) => {
+    return await fetchWithAuth(`/api/calls/${callId}/hangup`, {
       method: 'POST'
     });
   }
