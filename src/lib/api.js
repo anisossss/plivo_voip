@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3200';
+const API_URL = 'https://plivo.ainexim.com';
 
 async function fetchWithAuth(url, options = {}) {
   // Get token from localStorage
