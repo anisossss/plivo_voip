@@ -156,7 +156,7 @@ export default function Dashboard() {
       // Then initiate it
       addCallEvent('Dialing...');
       const result = await callAPI.initiateCall(createdCall._id);
-
+      console.log(result);
       setCallResult({
         success: true,
         message: 'Call initiated successfully!',
@@ -222,9 +222,42 @@ export default function Dashboard() {
       value: 'project-cancelled-by-broker',
       label: 'Projet annulé par le courtier'
     },
-    { value: 'credit-request-refused', label: 'Demande de crédit refusée' },
-    { value: 'professional-prospecting', label: 'Prospection professionnelle' },
-    { value: 'client-cancelled-project', label: 'Projet annulé par le client' }
+    {
+      value: 'credit-request-refused',
+      label: 'Demande de crédit refusée'
+    },
+    {
+      value: 'professional-prospecting',
+      label: 'Prospection professionnelle'
+    },
+    {
+      value: 'client-cancelled-project',
+      label: 'Projet annulé par le client'
+    },
+    {
+      value: 'mortgage-simulation-follow-up',
+      label: 'Suivi simulation crédit immobilier'
+    },
+    {
+      value: 'debt-consolidation-follow-up',
+      label: 'Suivi regroupement de crédits'
+    },
+    {
+      value: 'insurance-optimization-follow-up',
+      label: 'Suivi optimisation assurance emprunteur'
+    },
+    {
+      value: 'professional-credit-follow-up',
+      label: 'Suivi crédit professionnel'
+    },
+    {
+      value: 'customer-satisfaction-survey',
+      label: 'Enquête de satisfaction client'
+    },
+    {
+      value: 'refinancing-opportunity',
+      label: 'Opportunité de renégociation'
+    }
   ];
 
   // Call status indicator UI
